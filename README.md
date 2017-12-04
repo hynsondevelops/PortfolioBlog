@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+To do:
+Add users
+Allow admin users to create posts
+Allow post writing in browser to show plain text on one side and markdown to html on the other

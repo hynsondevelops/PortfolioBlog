@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+
+$markdown-editor-height: 800px;
+
+
+
+.toolbar
+{
+	height: 50px;
+}
+
+.editor
+{
+	border: 1px solid black;
+}
+
+.plain-text
+{
+	border: 1px solid black;
+	min-height: $markdown-editor-height;
+	height: auto;
+}
+
+.markdown-html
+{
+	border: 1px solid black;
+	min-height: $markdown-editor-height;
+	height: auto;
+}
+
