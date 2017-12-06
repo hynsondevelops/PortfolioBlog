@@ -1,27 +1,22 @@
 
+<%= form_tag("/posts", id: "plain-text-form") %>
+
+
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
-			<a>Navbar</a>
+		<div class="col-md-6 col-md-offset-2">
+			<%=text_field_tag("title")%>
+		</div>
+		<div class="col-md-4">
+			<button id="create-post" class="btn btn-primary" onclick="createPost();">Create Post</button>
 		</div>
 	</div>
 </div>
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
-			<%= submit_tag %>
-
-		</div>
-	</div>
-</div>
-
-<div class="container-fluid">
-	<div class="row">
-		<%= form_tag("/markdown") %>
-		<%= text_area_tag("content", @plain_text, class: "col-xs-6 col-sm-6 col-md-6 col-lg-6 plain-text") %>
+		<%= text_area_tag("content", @plain_text, class: "col-xs-6 col-sm-6 col-md-6 col-lg-6 plain-text", onkeyup: "updateMarkdown();") %>
 		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 markdown-html">
-			<%= @content %>
 		</div>
 	</div>
 </div>

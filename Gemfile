@@ -24,6 +24,8 @@ gem 'coffee-rails', '~> 4.2'
 #Project Specific Gems
 #for styling
 gem 'bootstrap-sass', '3.3.6'
+#for navbar
+gem 'rails_bootstrap_navbar'
 #for markdown to html
 gem 'redcarpet', '~> 3.0.0'
 
