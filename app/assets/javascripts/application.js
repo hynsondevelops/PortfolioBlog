@@ -16,13 +16,23 @@
 //= require_tree .
 
 
+function createImage()
+{
+	var plain_text_box = document.getElementById("content");
+	var plain_text_box_content = plain_text_box.value;
+	var image_name = document.getElementById("img").value.split(/(\\|\/)/g).pop();
+	$('#image-form').submit();
+	updateMarkdown();
+ };
+
 
 function updateMarkdown()
 {
 	var plain_text = document.getElementById("content").value;
+	var image_text_content = document.getElementById("image_content");
+	image_text_content.value = plain_text;
 	var markdown_box = document.getElementsByClassName("markdown-html")[0];//there is only ever one element with this classname
-	var markdown = ""
-
+	var markdown = "";
 	$.ajax({
 	    type: "GET",
 	    url: "/markdown",
@@ -36,17 +46,8 @@ function updateMarkdown()
 	});
 };
 
-/*$.get('/markdown', {"content": plain_text}, function(response){
-    // the response variable will contain the output of the controller method
-      	console.log(response);
-      	console.log(response[0])
-
-  	});
-  	*/
-
 function createPost()
 {
 	$('#plain-text-form').submit();
-}
-
+};
 

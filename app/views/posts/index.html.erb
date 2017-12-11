@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+	<div class="container-fluid">
+		<div class="row">
+			<h3> POST </h3>
+			<%= post.created_at %>
+			<%= link_to "Post", post %>
+		</div>
+	</div>
+<% end %>

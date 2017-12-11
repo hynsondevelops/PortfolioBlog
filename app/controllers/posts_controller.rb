@@ -9,13 +9,17 @@ class PostsController < ApplicationController
 
 	def create
 		#ADMIN ONLY LOGIC GOES HERE
-		@post = Post.create!(content: params[:content])
+		@post = Post.create!(content: params[:content], title: params[:title])
 		redirect_to action: "show", id: @post.id
 	end
 
 	def show
 		@post = Post.find(params[:id])
 		@content = helpers.markdown(@post.content)
+	end
+
+	def index
+		@posts = Post.order('created_at DESC')
 	end
 
 	def markdown_helper

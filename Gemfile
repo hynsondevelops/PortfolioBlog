@@ -28,7 +28,8 @@ gem 'bootstrap-sass', '3.3.6'
 gem 'rails_bootstrap_navbar'
 #for markdown to html
 gem 'redcarpet', '~> 3.0.0'
-
+#for images
+gem "paperclip", "~> 5.0.0"
 
 
 # Use jquery as the JavaScript library

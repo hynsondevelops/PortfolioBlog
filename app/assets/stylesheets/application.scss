@@ -20,10 +20,10 @@ $icon-font-path: 'bootstrap/';
 $markdown-editor-height: 800px;
 
 
-
-body
+ 
+.page-specific-content
 {
-	margin: 0px 16.66%;
+	margin: 0px 5%;
 }
 
 .toolbar
@@ -48,5 +48,25 @@ body
 	border: 1px solid black;
 	min-height: $markdown-editor-height;
 	height: auto;
+	text-align: center;
 }
 
+.post-title
+{
+	text-align: center;
+}
+
+.hidden-tag
+{
+	display: none;
+}
+
+.upload-panel
+{
+	width: 300px;
+}
+
+.panel-body
+{
+	word-wrap: break-word;
+} 

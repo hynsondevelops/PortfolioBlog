@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		Post Title
+	</div>
+	<div class="panel-body">
+		<%= form_tag("/posts", id: "plain-text-form") do%>
+		<%= text_field_tag("title") %>
+		<button id="create-post" class="btn btn-primary" onclick="createPost();">Create Post</button>
+	</div>
+</div>
