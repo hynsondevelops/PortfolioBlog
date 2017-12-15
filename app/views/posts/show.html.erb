@@ -5,6 +5,9 @@
 		<div class="col-md-8">
 			<div class="post-title">
 				<h1> <%= @post.title %> </h1>
+				<% @post.tags.each do |tag| %>
+					<p> <%= tag.name %> </p>
+				<% end %>
 			</div>
 			<%= @content %>
 		</div>
@@ -13,7 +16,6 @@
 	</div>
 </div>
 
-<div id="disqus_thread"></div>
 <script>
 
 /**

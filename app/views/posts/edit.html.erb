@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <div class="row">
+        <%= form_tag("/posts", id: "plain-text-form") do%>
+        <%= text_area_tag("content", @plain_text, class: "col-xs-4 col-sm-4 col-md-4 col-lg-4") %>
+                <% end %>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 markdown-html">
+        </div>
+    </div>
+</div>

@@ -15,7 +15,7 @@ class ImagesController < ApplicationController
 			print(params[:img])
 			@image = Image.find_by(img_file_name: params[:img].original_filename)
 		end
-		markdown_string = "![#{params[:alt_text]}](#{@image.img.url})"
+		markdown_string = "![#{params[:alt_text]}](#{@image.img.url('large')})"
 		@plain_text = params[:image_content] + markdown_string
 		render 'posts/new'
 	end

@@ -1,0 +1,12 @@
+<div class="panel panel-default upload-panel">
+	<div class="panel-heading">
+		Add Tags
+	</div>
+	<div class="panel-body">
+			<%= form_tag("/tags", id: "tag-form", :multipart => true) do %>
+			<%= text_field_tag("tag_name", nil, placeholder: 'Tag name', id: "tag_name") %>
+			<button id="create-tag" class="btn btn-primary" onclick="createTag();">Add Tag</button>
+			<% end %>
+	</div>
+</div>
+

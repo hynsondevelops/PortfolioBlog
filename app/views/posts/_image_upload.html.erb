@@ -6,7 +6,7 @@
 			<%= form_tag("/images", id: "image-form", :multipart => true) do %>
 			<%= text_field_tag("alt_text", nil, placeholder: 'Image Alt Text') %>
 			<%= file_field_tag "img", type: :file %>
-			<%= text_area_tag("image_content", @plain_text, class: "col-xs-6 col-sm-6 col-md-6 col-lg-6 hidden-tag", onkeyup: "updateMarkdown();") %>
+			<%= text_area_tag("image_content", @plain_text, class: "hidden-tag", onkeyup: "updateMarkdown();") %>
 			<% end %>
 			<button id="create-image" class="btn btn-primary" onclick="createImage();">Add Image</button>	
 	</div>

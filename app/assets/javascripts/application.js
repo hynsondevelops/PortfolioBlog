@@ -25,6 +25,13 @@ function createImage()
 	updateMarkdown();
  };
 
+function createTag()
+{
+	var tag_name = document.getElementById("tag_name").value;
+	var tag_field = document.getElementById("tag_field")
+	tag_field.value += tag_name;
+	tag_field.value += " ";
+}
 
 function updateMarkdown()
 {

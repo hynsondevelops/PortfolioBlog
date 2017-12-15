@@ -9,7 +9,12 @@ class PostsController < ApplicationController
 
 	def create
 		#ADMIN ONLY LOGIC GOES HERE
+		tag_names = params[:tags].split(" ")
 		@post = Post.create!(content: params[:content], title: params[:title])
+		tag_names.each do |tag_name|
+			tag = Tag.find_by(name: tag_name)
+			TagsToPost.create(post_id: @post.id, tag_id: tag.id)
+		end
 		redirect_to action: "show", id: @post.id
 	end
 
