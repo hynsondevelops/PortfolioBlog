@@ -33,10 +33,16 @@ module ApplicationHelper
 	      tables: true
 	    }
 
+	    
+
 	    renderer = HTMLwithPygments.new(options)
 
 	    markdown = Redcarpet::Markdown.new(renderer, extensions)
 
 	    markdown.render(text).html_safe
+	end
+
+	def URLSpaces(text)
+		text.gsub(" ", "%20")
 	end
 end

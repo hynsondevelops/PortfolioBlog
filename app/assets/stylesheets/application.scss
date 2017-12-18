@@ -62,7 +62,7 @@ $markdown-editor-height: 800px;
 
 .upload-panel
 {
-	width: 300px;
+	max-width: 300px;
 }
 
 .panel-body
@@ -73,6 +73,11 @@ $markdown-editor-height: 800px;
 .center
 {
 	text-align: center;
+}
+
+.associated-tag
+{
+	font-size: 12px;
 }
 
 

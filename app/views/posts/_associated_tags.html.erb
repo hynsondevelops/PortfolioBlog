@@ -1,0 +1,5 @@
+<div class="container-fluid">
+	<% tags.each_with_index do |tag, index| %>
+		<%= link_to "#{tag.name}", tag_path(tag), class: "btn btn-info associated-tag" %>
+	<% end %>
+</div>

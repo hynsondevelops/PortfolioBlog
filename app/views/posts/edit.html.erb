@@ -1,9 +1,38 @@
 <div class="container-fluid">
-    <div class="row">
-        <%= form_tag("/posts", id: "plain-text-form") do%>
-        <%= text_area_tag("content", @plain_text, class: "col-xs-4 col-sm-4 col-md-4 col-lg-4") %>
-                <% end %>
-        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 markdown-html">
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-md-4">
+			<%= render "posts/image_upload" %>	
+		</div>
+		<div class="col-md-4">
+			<%= render "posts/tags_panel" %>	
+		</div>
+		<div class="col-md-4">
+			<div class="panel panel-default upload-panel">
+				<div class="panel-heading">
+					Post Title
+				</div>
+				<div class="panel-body">
+					<%= form_tag(@update_url, id: "plain-text-form", method: :patch) do%>
+					<%= text_field_tag("title") %>
+					<button id="create-post" class="btn btn-primary" onclick="createPost();">Create Post</button>
+				</div>
+			</div>
+		</div>			
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<%= text_area_tag("content", @plain_text, class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 plain-text", onkeyup: "updateMarkdown();") %>
+		<%= text_field_tag("tags", "", class: "hidden-tag", id: "tag_field") %>
+		<%= text_field_tag("id", @post.id, class: "hidden-tag", id: "id_field") %>
+		<% end %>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 markdown-html">
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+	</div>
 </div>
