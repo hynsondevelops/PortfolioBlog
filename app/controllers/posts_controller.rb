@@ -3,25 +3,42 @@ class PostsController < ApplicationController
 	end
 
 	def new
-		@post = Post.new
-		@plain_text = "Type your markdown plain text here."
+		if (user_signed_in?)
+			@post = Post.new
+			@plain_text = "Type your markdown plain text here."
+		else
+			redirect_to action: "index"
+		end
 	end
 
 	def create
 		#ADMIN ONLY LOGIC GOES HERE
-		tag_names = params[:tags].split(" ")
-		@post = Post.create!(content: params[:content], title: params[:title])
-		tag_names.each do |tag_name|
-			tag = Tag.find_by(name: tag_name)
-			TagsToPost.create(post_id: @post.id, tag_id: tag.id)
+		if (user_signed_in?)
+			@post = Post.create!(author: current_user, content: params[:content], title: params[:title])
+			if (params[:tags] != nil)
+				tag_names = params[:tags].split(" ")
+				tag_names.each do |tag_name|
+					tag = Tag.find_by(name: tag_name)
+					TagsToPost.create(post_id: @post.id, tag_id: tag.id)
+				end
+			end
+			redirect_to action: "show", title: @post.title
 		end
-		redirect_to action: "show", title: @post.title
 	end
 
 	def edit
 		@post = Post.find_by(title: params[:title])
-		@plain_text = @post.content
-		@update_url = "/posts/#{helpers.URLSpaces(@post.title)}"
+		if (user_signed_in?)
+			@plain_text = @post.content
+			@update_url = "/posts/#{helpers.URLSpaces(@post.title)}"
+			if (current_user.id != @post.author.id)
+				flash[:alert] = 'Error while sending message!'
+				redirect_to action: "show", title: @post.title
+			end
+		else
+			flash[:alert] = 'Error while sending message!'
+			redirect_to action: "show", title: @post.title
+		end
 	end
 
 	def update
@@ -38,6 +55,18 @@ class PostsController < ApplicationController
 	def show
 		@post = Post.find_by(title: params[:title])
 		@content = helpers.markdown(@post.content)
+		tag_ids = []
+		@post.tags.each do |tag|
+			tag_ids.push(tag.id)
+		end
+		@related_posts = Set.new
+		tag_ids.size.downto(0) do |i|
+			tags = tag_ids[0...i]
+			posts = Post.includes(:tags).where(:id => tags)
+			posts.each do |post|
+				@related_posts.add(post)
+			end
+		end
 	end
 
 	def index

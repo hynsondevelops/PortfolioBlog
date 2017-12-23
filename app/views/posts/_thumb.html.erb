@@ -1,0 +1,18 @@
+<div class="row">
+	<h3> <%= link_to post.title, post %> </h3>
+	 <%= post.created_at.strftime("Posted on %A %B %d at %I:%M%p") %>
+</div>
+<div class="row">
+	<% if user_signed_in? %>
+		<% if user.img_file_name != nil %>
+			<%= image_tag current_user.img.url(:thumb), class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 author-pic"%>
+		<% end %>
+	<% end %>
+	<div class="col-md-8">
+		<%= link_to "#{post.content[0..250]}...", post %>
+	</div>
+</div>
+<div class="row">
+	<%= render partial: "associated_tags", :locals => {tags: post.tags} %>
+</div>
+

@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid"id="first-element-nav" >
+    <div class="navbar-header">
+      <a href="/posts" class="navbar-brand">Blog</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapsable">
+      <ul class="nav navbar-nav foo" id="menu">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/tags/Rails">Rails</a></li>
+            <li><a href="/tags/Ruby">Ruby</a></li>
+            <li><a href="/tags/Javascript">Javascript</a></li>
+            <li><a href="/tags/HTML">HTML</a></li>
+            <li><a href="/tags/CSS">CSS</a></li>
+          </ul>
+        </li>
+        <% if user_signed_in? %>
+          <li><a href="/users/posts" id="authored-posts">Authored Posts</a></li>
+          <li><a href="/posts/new" id="new-post">New Post</a></li>
+          <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+        <% else %>
+          <li><%= link_to('Login', new_user_session_path) %> </li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" align="right">
+        <li class="active"><a href="/portfolio">Portfolio</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,38 @@
+<div class="container-fluid fullscreen-intro">
+
+	<h3 class="post-title"> Hynson Develops </h3>
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+
+		<div class="col-md-4">
+		<p> Hello! My name is Adam Hynson and I am a freelance web developer based in Baltimore, Maryland. </p>
+		<p> I specialize in Ruby on Rails development but have skills in HTML, CSS, Bootstrap, Javascript, jQuery, PostgreSQL, and BASH. I consider myself a full stack developer with strong backend skills. </p>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+		</div>
+		<div class="col-md-2">
+			<%= image_tag @user.img.url(:medium), class: "portfolio-portrait" %>
+		</div>
+		<div class="col-md-5">
+		</div>
+	</div>
+</div>
+<div class="container-fluid fullscreen-projects">
+	<h3 class="post-title"> Projects and Work </h3>
+	<div class="col-md-6">
+		<%= render partial: "thumb", :locals => {project: @chess} %>
+	</div>
+	<div class="col-md-6">
+		<%= render partial: "thumb", :locals => {project: @real_estate} %>
+	</div>
+	<div class="col-md-6">
+		<%= render partial: "thumb", :locals => {project: @tutoring} %>
+	</div>
+</div>
+
+

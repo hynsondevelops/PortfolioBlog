@@ -32,6 +32,20 @@ gem 'redcarpet', '~> 3.0.0'
 gem "paperclip", "~> 5.0.0"
 #syntax highlighting
 gem 'pygmentize'
+#for users 
+gem 'devise'
+#for icons
+gem 'font-awesome-rails'
+#for testing
+gem 'rspec-rails', '~> 3.6'
+#feature specs
+gem "capybara"
+#for javascript
+gem "capybara-webkit"
+#for mock models
+gem 'factory_bot_rails'
+
+
 
 
 

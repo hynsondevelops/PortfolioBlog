@@ -14,6 +14,20 @@
 		</div>
 		<div class="col-md-2">
 		</div>
+		<div class="row">
+			<div class="col-md-4 author-box">
+				<%= render partial: "users/author", :locals => {user: @post.author} %>
+			</div>
+			<div class="col-md-8">
+				<% @related_posts.each_with_index do |post, index| %>
+						<div class="col-md-4">
+							<%= render partial: "thumb", :locals => {post: post} %>
+						</div>				
+				<% end %>
+
+
+			</div>
+		</div>
 	</div>
 </div>
 

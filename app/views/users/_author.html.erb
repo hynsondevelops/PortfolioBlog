@@ -1,0 +1,21 @@
+
+<div class="container-fluid">
+	<div class="row">
+		<% if user.img_file_name != nil %>
+			<%= image_tag user.img.url(:thumb), class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 author-pic"%>
+		<% end %>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 author-info">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<%= user.name %><br>
+					<i class="fa fa-github fa-lg" aria-hidden="true"></i>
+					<%= link_to "Github", user.github %>
+				</div>
+				<div class="panel-body">
+					<%= user.description %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

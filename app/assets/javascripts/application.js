@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
+//= require bootstrap.min
 
 function createImage()
 {
@@ -58,3 +58,9 @@ function createPost()
 	$('#plain-text-form').submit();
 };
 
+function redirectToShow()
+{
+	$('#redirect')[0].click();
+	alert("You do not have edit privledges for this post.")
+	console.log("CLICKED")
+};

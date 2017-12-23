@@ -8,31 +8,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsable">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="/posts" class="navbar-brand">Blog</a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-collapsable">
-          <ul class="nav navbar-nav foo" id="menu">
-            <li class="active"><a href="/portfolio">Portfolio</a></li>
-            <li><a href="/posts/new" id="new-post">New Post</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right" align="right">
-            <li><a href="/logout">Log Out</a></li>
-          </ul>
-        </div>
+    <%= render "layouts/navbar" %>
+
+    <% if request.env['PATH_INFO'] != "/portfolio" %>
+       <div class="page-specific-content">
+        <%= yield %>
       </div>
-    </nav>
-    <div class="page-specific-content">
+      <div id="disqus_thread"></div>
+    </body>
+    <% else %>
       <%= yield %>
-    </div>
-    <div id="disqus_thread"></div>
-  </body>
+    <% end %>
 </html>

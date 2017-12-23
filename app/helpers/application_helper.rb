@@ -12,6 +12,12 @@ class HTMLwithPygments < Redcarpet::Render::HTML
   def add_code_tags(code, lang)
     code = code.sub(/<\/pre>/,"</code></pre>")
   end
+
+  def table(header, body)
+    "<table border='1'>" \
+      "#{header}#{body}" \
+    "</table>"
+  end
 end
 
 module ApplicationHelper
@@ -22,7 +28,8 @@ module ApplicationHelper
 	      hard_wrap:       true,
 	      link_attributes: { rel: 'nofollow', target: "_blank" },
 	      space_after_headers: true,
-	      fenced_code_blocks: true
+	      fenced_code_blocks: true, 
+	      tables: true
 	    }
 
 	    extensions = {

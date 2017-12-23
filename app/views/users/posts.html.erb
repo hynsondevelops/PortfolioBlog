@@ -1,0 +1,10 @@
+<% @posts.each do |post| %>
+	<div class="container-fluid">
+		<div class="row">
+			<h3> POST </h3>
+			<%= post.created_at %>
+			<%= link_to "Post", post %>
+			<%= link_to "Edit Post", edit_post_url(post) %>
+		</div>
+	</div>
+<% end %>

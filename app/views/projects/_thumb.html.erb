@@ -1,0 +1,18 @@
+<div id = "fullscreen">
+
+</div>
+
+<div class="row">
+	<h3> <%= link_to project.name, project %> </h3>
+</div>
+<div class="row">
+	<%= image_tag project.images[0].img.url(:large), class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 author-pic"%>
+	
+	<div class="col-md-8">
+		<%= link_to "#{project.description[0..250]}...", project %>
+	</div>
+</div>
+<div class="row">
+	<%= link_to "Github", project.github %><br>
+	<%= link_to "Live", project.live_link %>
+</div>

@@ -1,0 +1,36 @@
+<%= form_for(@project, html: {:multipart => true}, :url => { :action => :create }) do |f| %>
+    
+    <%= f.label :name %>:
+    <%= f.text_field :name %><br />
+
+    <%= f.label :description %>:
+    <%= f.text_field :description %><br />
+
+    <%= f.label :github %>:
+    <%= f.text_field :github %><br />
+
+    <%= f.label :live_link %>:
+    <%= f.text_field :live_link %><br />
+
+    <%= f.radio_button(:personal_or_work, false) %>
+    <%= f.label(:personal_or_work, "Work") %>
+    <%= f.radio_button(:personal_or_work, true) %>
+    <%= f.label(:personal_or_work, "Personal") %> 
+    <%= f.hidden_field :author_id, :value => current_user.id %>
+
+    <div class="control-group">
+      <%= f.label :pictures, :class => 'control-label' %>
+      <div class="controls">
+        <!-- The magic is coming ...look at my eyes....shazammmm -->
+        <!-- Use HTML5 multiple attribute to enable multiple selection
+             and pass back to controller all files as an array, ready 
+             for paperclip!!
+             file_field_tag, since images is not a gallery attribute
+         -->
+         <%= file_field_tag "images[]", type: :file, multiple: true %>
+      </div>
+    </div>
+
+
+    <%= f.submit %>
+  <% end %>
