@@ -64,3 +64,38 @@ function redirectToShow()
 	alert("You do not have edit privledges for this post.")
 	console.log("CLICKED")
 };
+
+function nextText()
+{
+
+	var skills = $(".portfolio-skills")
+	for (var i = 0; i < skills.length; i++)
+	{
+		console.log(i)
+		console.log(skills[i].style)
+		if ($(skills[i]).css("display") != "none")
+		{
+			console.log("True")
+			console.log(i)
+			if (i + 1 == skills.length)
+			{
+				$("#skill" + i).hide()
+				$("#skill0").show()
+				return
+			}
+			else
+			{
+				$("#skill" + i).hide()
+				$("#skill" + (i + 1)).show()
+				return
+			}
+		}
+	}
+	$("#skill0").show()
+
+}
+
+function rotateText()
+{
+
+}

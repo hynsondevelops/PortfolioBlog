@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
     has_many :posts, foreign_key: "author_id"
 
-    has_attached_file :img, styles: {large: "480x600>", medium: "240x300>", thumb: "160x200>" }, default_url: "/images/:style/missing.png"
+    has_attached_file :img, styles: {large: "480x480>", medium: "240x240>", thumb: "160x160>" }, default_url: "/images/:style/missing.png"
     validates_attachment_content_type :img, content_type: /\Aimage\/.*\z/
     validates :img_file_name, uniqueness: true
 end
