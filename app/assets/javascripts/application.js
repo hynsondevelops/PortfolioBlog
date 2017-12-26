@@ -80,22 +80,23 @@ function nextText()
 			if (i + 1 == skills.length)
 			{
 				$("#skill" + i).hide()
-				$("#skill0").show()
+				$("#skill0").css("display", "inline-block")
 				return
 			}
 			else
 			{
 				$("#skill" + i).hide()
-				$("#skill" + (i + 1)).show()
+				$("#skill" + (i + 1)).css("display", "inline-block")
 				return
 			}
 		}
 	}
-	$("#skill0").show()
+	$("#skill6").css("display", "inline-block")
 
 }
 
 function rotateText()
 {
-
+	nextText(); 
+	window.setInterval(nextText, 4000);
 }

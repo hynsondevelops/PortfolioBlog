@@ -237,3 +237,15 @@ Now we have a function that when called will update the right side with a render
 ![](/system/images/imgs/000/000/002/large/editor_2.png?1513566651)
 
 At this point we have achieved a basic Markdown editor. To improve the editor we will add file uploading and a tagging system in the next post.", title: 'Markdown Editor')
+
+
+#Projects
+chess = Project.new.from_json("{\"name\":\"Chess\",\"description\":\"OOP approach to implementing Chess with Ruby on the command line. Allows for all rules of chess including castling and en passant. \",\"personal_or_work\":true,\"github\":\"https://github.com/hynsondevelops/Chess\",\"live_link\":\"https://github.com/hynsondevelops/Chess\",\"author_id\":1}")
+chess.save
+
+real_estate = Project.create!.from_json("{\"name\":\"Real Estate App\",\"description\":\"A real estate listing application similar to Zillow.com or Realtor.com. Uses Ruby on Rails with a Postgresql database and Bootstrap styling. Database includes information on al fifty United States including over X zipcodes and Y cities. Allows for listing for rent or sale with a user profile that allows email communication. \",\"personal_or_work\":true,\"github\":\"https://github.com/hynsondevelops/RealEstateApp\",\"live_link\":\"https://stormy-bayou-53826.herokuapp.com/\",\"author_id\":1}")
+real_estate.save
+
+tutoring = Project.create!.from_json("{\"name\":\"Tutoring Business\",\"description\":\"A spanish tutoring business contact page. Fully responsive design. \",\"personal_or_work\":true,\"github\":\"https://github.com/hynsondevelops/TutoringPage\",\"live_link\":\"http://hynsontutoring.services/\",\"author_id\":1}")
+tutoring.save
+

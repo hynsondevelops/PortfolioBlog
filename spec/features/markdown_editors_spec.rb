@@ -1,4 +1,4 @@
-require 'rails_helper'
+ require 'rails_helper'
 
 RSpec.feature "MarkdownEditors", type: :feature do
 

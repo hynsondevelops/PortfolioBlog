@@ -6,9 +6,6 @@
 			<%= render partial: "associated_tags", :locals => {tags: @post.tags} %>
 			<div class="post-title">
 				<h1> <%= @post.title %> </h1>
-				<% @post.tags.each do |tag| %>
-					<p> <%= tag.name %> </p>
-				<% end %>
 			</div>
 			<%= @content %>
 		</div>

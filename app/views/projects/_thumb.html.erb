@@ -1,7 +1,3 @@
-<div id = "fullscreen">
-
-</div>
-
 <div class="row">
 	<h3> <%= link_to project.name, project %> </h3>
 </div>
@@ -12,7 +8,11 @@
 		<%= link_to "#{project.description[0..250]}...", project %>
 	</div>
 </div>
-<div class="row">
-	<%= link_to "Github", project.github %><br>
-	<%= link_to "Live", project.live_link %>
+<div class="row project-links">
+	<div class="col-md-6">
+		<%= link_to "Live", project.live_link, class: "btn btn-primary" %>
+	</div>
+	<div class="col-md-6">
+		<%= link_to "Github", project.github, class: "btn btn-primary" %><br>
+	</div>
 </div>

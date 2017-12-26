@@ -1,21 +1,25 @@
 <div class="container-fluid fullscreen-intro portfolio">
 	<h3 class="post-title"> Hynson Develops </h3>
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-3">
 		</div>
 
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<p class="portfolio-intro"> Hello! My name is Adam Hynson and I am a freelance web developer based in Baltimore, Maryland. I specialize in Ruby on Rails development. I consider myself a full stack developer with strong backend skills. </p>
-			<p class="portfolio-description">I have skills in </p>
-			<p class="portfolio-skills" id="skill0"> HTML </p> 
-			<p class="portfolio-skills" id="skill1"> CSS </p> 
-			<p class="portfolio-skills" id="skill2"> Bootstrap </p> 
-			<p class="portfolio-skills" id="skill3"> Javascript </p> 
-			<p class="portfolio-skills" id="skill4"> jQuery </p> 
-			<p class="portfolio-skills" id="skill5"> PostgreSQL </p>
-			<p class="portfolio-skills" id="skill6"> BASH </p> 
+			<div class="portfolio-description">
+				<h2>I have skills in... </h2>
+				<div class="typewriter">
+					<h1 class="portfolio-skills" id="skill0"> HTML/CSS </h1> 
+					<h1 class="portfolio-skills" id="skill1"> Bootstrap </h1> 
+					<h1 class="portfolio-skills" id="skill2"> Javascript </h1> 
+					<h1 class="portfolio-skills" id="skill3"> jQuery </h1> 
+					<h1 class="portfolio-skills" id="skill4"> PostgreSQL </h1>
+					<h1 class="portfolio-skills" id="skill5"> BASH </h1>
+					<h1 class="portfolio-skills" id="skill6"> Ruby on Rails </h1>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-3">
 		</div>
 	</div>
 	<div class="row">
@@ -23,25 +27,100 @@
 		</div>
 		<div class="col-md-2">
 			<%= image_tag @user.img.url(:medium), class: "portfolio-portrait" %>
+			<a class="btn btn-primary btn-lg" id="contact-scroll-button" href="#portfolio-contact-scroll">Yes, I'm available for hire</a>
 		</div>
 		<div class="col-md-5">
 		</div>
 	</div>
 </div>
-<div class="container-fluid fullscreen-projects">
-	<h3 class="post-title"> Projects and Work </h3>
-	<div class="col-md-6">
-		<%= render partial: "thumb", :locals => {project: @chess} %>
+<div class="container-fluid portfolio-blog">
+	<h3> Blog </h3>
+	<div class="posts-section">
+		<% @posts.each do |post| %>
+		<div class="col-md-4">
+			<%= render partial: "posts/thumb", :locals => {post: post, user: @user} %>
+		</div>
+		<% end %>
 	</div>
-	<div class="col-md-6">
-		<%= render partial: "thumb", :locals => {project: @real_estate} %>
-	</div>
-	<div class="col-md-6">
-		<%= render partial: "thumb", :locals => {project: @tutoring} %>
+
 	</div>
 </div>
 
+<div class="container-fluid portfolio-projects">
+	<h3 class="post-title"> Projects and Work </h3>
+	<div class="project-section">
+		<div class="col-md-4">
+			<%= render partial: "thumb", :locals => {project: @chess} %>
+		</div>
+		<div class="col-md-4">
+			<%= render partial: "thumb", :locals => {project: @real_estate} %>
+		</div>
+		<div class="col-md-4">
+			<%= render partial: "thumb", :locals => {project: @tutoring} %>
+		</div>
+	</div>
+</div>
+<div class="container-fluid portfolio-contact" id="portfolio-contact-scroll">
+	<div class="col-md-2">
+	</div>
+	<div class="col-md-8">
+		<div class="contact-text">
+			<h1> Want to contact me? </h1>
+			<h2> I am currently accepting new freelance projects. Please give me a description and I will respond promptly. </h2>
+		</div>
+
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary btn-lg" id="contact-button" data-toggle="modal" data-target="#myModal">Contact Me
+		</button>
+
+		<!-- Modal -->
+		<div class="modal-container">
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			      </div>
+			      <div class="modal-body">
+			        <%= form_tag("/contact") do %>
+			        	<div class="row">
+			        		<div class="col-md-2">
+			        		</div>
+				        	<div class="col-md-4">
+				        		<%= text_field_tag("name", nil, class: "contact-text", placeholder: "Name") %>
+				        	</div>
+				        	<div class="col-md-4">
+				        		<%= text_field_tag("email", nil, class: "contact-text", placeholder: "Email") %>
+				        	</div>
+				        	<div class="col-md-2">
+				        	</div>
+				        </div>
+			        	<div class="row">
+			        		<div class="col-md-2">
+			        		</div>
+			        		<div class="col-md-8">
+			        			<%= text_area_tag("description", nil, class: "contact-description", placeholder: "Tell me about your project. What needs solving? How do you think I could help? Timeline, budget, and technologies involved would all be appreciated.") %>
+			        		</div>
+			        		<div class="col-md-2">
+			        		</div>
+			        	</div> 
+			        <% end %>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-primary">Save changes</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+	</div>
+	<div class="col-md-2">
+	</div>
+</div>
 
 <script>
-	$(document).ready(window.setInterval(nextText, 2000))
+	$(document).ready(rotateText())
 </script>
