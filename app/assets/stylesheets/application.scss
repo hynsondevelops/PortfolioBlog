@@ -19,9 +19,35 @@ $icon-font-path: 'bootstrap/';
 @import "bootstrap";
 @import "font-awesome";
 $markdown-editor-height: 800px;
+$text-color : black;
+$darker-grey : #969A97;
+$tan-grey : #D1D3C4;
+$green-grey: #BDD2A6;
+$green : #C5E6A6;
+$light-grey: #DFE0DC;
+
+.navbar
+{
+	border: 10px solid $text-color;
+	background-color: $green;
+}
+
+.navbar-brand
+{
+	color: $text-color;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: $text-color;
+    background-color: $green;
+    border-color: $text-color; /*set the color you want here*/
+}
 
 
-
+.btn
+{
+	color:black;
+}
 .project-links
 {
 	margin-top: 2vh;
@@ -31,7 +57,6 @@ $markdown-editor-height: 800px;
 #contact-scroll-button
 {
 	margin-top: 10vh;
-	color: white;
 }
 
 .portfolio-contact
@@ -39,7 +64,7 @@ $markdown-editor-height: 800px;
 	height:40vh;
 	position: relative;
 	width: 100%;
-	background-color: #888753;
+	background-color: $tan-grey;
 	background-size: cover;
 }
 
@@ -48,7 +73,7 @@ $markdown-editor-height: 800px;
 	height:40vh;
 	position: relative;
 	width: 100%;
-	background-color: #888753;
+	background-color: $green-grey;
 	background-size: cover;
 }
 .contact-description
@@ -134,6 +159,12 @@ $markdown-editor-height: 800px;
 	margin: 0 5%;
 }
 
+.btn-primary
+{
+	background-color: $green-grey;
+	border-color: $text-color;
+}
+
 .fullscreen-intro
 {
 	height: 100vh;
@@ -148,7 +179,7 @@ $markdown-editor-height: 800px;
 	height: 60vh;
 	position: relative;
 	width: 100%;
-	background-color: white;
+	background-color: $darker-grey;
 	background-size: cover;
 }
 

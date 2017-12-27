@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171222184725) do
+ActiveRecord::Schema.define(version: 20171227013547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,14 +23,19 @@ ActiveRecord::Schema.define(version: 20171222184725) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "project_id"
+    t.integer  "post_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
     t.string   "title"
     t.integer  "author_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "img_file_name"
+    t.string   "img_content_type"
+    t.integer  "img_file_size"
+    t.datetime "img_updated_at"
   end
 
   create_table "projects", force: :cascade do |t|
