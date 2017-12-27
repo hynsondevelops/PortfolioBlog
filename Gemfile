@@ -40,8 +40,6 @@ gem 'font-awesome-rails'
 gem 'rspec-rails', '~> 3.6'
 #feature specs
 gem "capybara"
-#for javascript
-gem "capybara-webkit"
 #for mock models
 gem 'factory_bot_rails'
 
@@ -65,6 +63,8 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  #for javascript
+  gem "capybara-webkit"
   gem 'byebug', platform: :mri
 end
 
