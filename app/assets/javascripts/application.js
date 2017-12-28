@@ -100,3 +100,15 @@ function rotateText()
 	nextText(); 
 	window.setInterval(nextText, 4000);
 }
+
+
+function submitContactInfo()
+{
+	$("#new_contact").submit();
+	var modal = $("#contact-modal");
+	modal.html("Your contact request has been submitted. Thank you for contacting me. I will get back to you by the next day. ");
+	var buttons = $("#contact-create-buttons");
+	buttons.html('<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>')
+
+
+}

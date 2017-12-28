@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
 		@chess = Project.find_by(name: "Chess")
 		@real_estate = Project.find_by(name: "Real Estate App")
 		@tutoring = Project.find_by(name: "Tutoring Business")
+		@contact = Contact.new
 	end
 
 	def index

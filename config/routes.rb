@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :images
   resources :tags, param: :name
   resources :projects
+  resources :contacts
   get 'markdown_url', to: "images#markdownURL"
   get 'portfolio', to: "projects#portfolio"
   get 'markdown', to: "posts#markdown_helper"

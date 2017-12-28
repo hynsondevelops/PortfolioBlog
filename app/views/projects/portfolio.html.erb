@@ -80,18 +80,18 @@
 			    <div class="modal-content">
 			      <div class="modal-header">
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			        <h3 class="modal-title" id="myModalLabel">Contact Me</h3>
 			      </div>
-			      <div class="modal-body">
-			        <%= form_tag("/contact") do %>
-			        	<div class="row">
+			      <div class="modal-body" id="contact-modal">
+			        	<div class="row" id="contact-name-email">
 			        		<div class="col-md-2">
 			        		</div>
 				        	<div class="col-md-4">
-				        		<%= text_field_tag("name", nil, class: "contact-text", placeholder: "Name") %>
+				        		<%= form_for(@contact) do |f| %>
+				        		<%= f.text_field(:name, class: "contact-text", placeholder: "Name") %>
 				        	</div>
 				        	<div class="col-md-4">
-				        		<%= text_field_tag("email", nil, class: "contact-text", placeholder: "Email") %>
+				        		<%= f.text_field(:email, class: "contact-text", placeholder: "Email") %>
 				        	</div>
 				        	<div class="col-md-2">
 				        	</div>
@@ -100,16 +100,16 @@
 			        		<div class="col-md-2">
 			        		</div>
 			        		<div class="col-md-8">
-			        			<%= text_area_tag("description", nil, class: "contact-description", placeholder: "Tell me about your project. What needs solving? How do you think I could help? Timeline, budget, and technologies involved would all be appreciated.") %>
+			        			<%= f.text_area(:description, class: "contact-description", placeholder: "Tell me about your project. What needs solving? How do you think I could help? Timeline, budget, and technologies involved would all be appreciated.") %>
+			        			<% end %>
 			        		</div>
 			        		<div class="col-md-2">
 			        		</div>
 			        	</div> 
-			        <% end %>
 			      </div>
-			      <div class="modal-footer">
+			      <div class="modal-footer" id="contact-create-buttons">
 			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			        <button type="button" class="btn btn-primary">Save changes</button>
+			        <button type="button" class="btn btn-primary" onclick="submitContactInfo();">Save changes</button>
 			      </div>
 			    </div>
 			  </div>

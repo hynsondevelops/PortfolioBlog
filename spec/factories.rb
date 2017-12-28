@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :contact do
+    
+  end
   factory :project do
     
   end
