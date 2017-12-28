@@ -1,18 +1,20 @@
-<div class="row">
+<div class="row project-title-row">
 	<h3> <%= link_to project.name, project %> </h3>
+
 </div>
-<div class="row">
-	<%= image_tag project.images[0].img.url(:large), class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 author-pic"%>
+<div class="row project-top-container">
+	<%= image_tag project.images[0].img.url(:large), class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 author-pic"%><br>
+
 	
-	<div class="col-md-8">
-		<%= link_to "#{project.description[0..250]}...", project %>
+	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+		<%= "#{project.description[0..250]}" %>
+		<br>
+		<%= link_to "Read more...", project %>
 	</div>
 </div>
 <div class="row project-links">
-	<div class="col-md-6">
+	<div>
 		<%= link_to "Live", project.live_link, class: "btn btn-primary" %>
-	</div>
-	<div class="col-md-6">
 		<%= link_to "Github", project.github, class: "btn btn-primary" %><br>
 	</div>
 </div>

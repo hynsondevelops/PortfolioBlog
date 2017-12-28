@@ -37,14 +37,26 @@ $light-grey: #DFE0DC;
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: $text-color;
     background-color: $green;
-    border-color: $text-color; /*set the color you want here*/
+    border-color: $darker-grey; /*set the color you want here*/
 }
 
 
 .btn
 {
-	color:black;
+	color: $text-color;
+    background-color: $green-grey !important;
+    border-color: $darker-grey; /*set the color you want here*/
+    border: 5px outset $darker-grey;;
 }
+
+.btn:hover
+{
+	color: $text-color;
+    background-color: $green !important;
+    border-color: $darker-grey; /*set the color you want here*/
+    border: 5px inset $darker-grey;
+}
+
 .project-links
 {
 	margin-top: 2vh;
@@ -162,7 +174,7 @@ $light-grey: #DFE0DC;
 .btn-primary
 {
 	background-color: $green-grey;
-	border-color: $text-color;
+	border-color: $darker-grey;
 }
 
 .fullscreen-intro
@@ -358,6 +370,16 @@ tables
 #contact-name-email
 {
 	margin: 2vh 0;
+}
+
+.project-top-container
+{
+	height: 20vh;
+}
+
+.project-title-row
+{
+	text-align: center;
 }
 
 .modal-title
