@@ -6,8 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #User
-user = User.create!(:name => 'Adam Hynson', :github => "https://github.com/hynsondevelops/", :description => "I'm a junior Ruby on Rails developer. It's important to me to build long term relationships with clients I look forward to hearing from you!", :email => 'hynsondevelops@gmail.com', :password => ENV["user_password"], :password_confirmation => ENV["user_password"])
-
+user = User.create!(:name => 'Adam Hynson', :github => "https://github.com/hynsondevelops/", :description => "I'm a junior Ruby on Rails developer. It's important to me to build long term relationships with clients I look forward to hearing from you!", :email => 'hynsondevelops@gmail.com', :password => ENV["user_password"], :password_confirmation => ENV["user_password"], :img => File.new("#{Rails.root}/app/assets/images/ProfessionalPortraitCrop.png"))
 
 
 #Tags
