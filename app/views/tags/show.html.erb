@@ -1,9 +1,14 @@
-<h3> <%= @tag.name %> </h3>
-<% @tag.posts.each do |post| %>
-	<div class="container-fluid">
-		<div class="row">
+<div class="container-fluid post-index">
+	<h3> Posts tagged with <%= @tag.name %> </h3>
+	<% @tag.posts.each_with_index do |post, index| %>
+		<% if index==0 || index % 3==0%>
+			<div class="row">
+		<% end %>
+		<div class="col-md-4">
 			<%= render partial: "posts/thumb", :locals => {post: post} %>
-
 		</div>
-	</div>
-<% end %>
+		<% if index!=0 && index % 2 == 0 %>
+			</div>
+		<% end %>
+	<% end %>
+</div>

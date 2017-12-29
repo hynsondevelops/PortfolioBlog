@@ -62,15 +62,31 @@ $light-grey: #DFE0DC;
 	margin-top: 2vh;
 }
 
+#blog-project-arrow
+{
+	margin-top: 1vh;
+}
+
+.blog-projects
+{
+	font-size: 18px;
+	margin-top: 5vh;
+	text-align:center;
+}
 
 #contact-scroll-button
 {
-	margin-top: 10vh;
+	margin-top: 3vh;
+}
+
+#blog-projects-a
+{
+	color:white;
 }
 
 .portfolio-contact
 {
-	height:40vh;
+	height:45vh;
 	position: relative;
 	width: 100%;
 	background-color: $tan-grey;
@@ -79,7 +95,7 @@ $light-grey: #DFE0DC;
 
 .portfolio-blog
 {
-	height:40vh;
+	height:45vh;
 	position: relative;
 	width: 100%;
 	background-color: $green-grey;
@@ -166,6 +182,11 @@ $light-grey: #DFE0DC;
 	border-radius: 100%;
 }
 
+.portrait-contact
+{
+	text-align:center;
+}
+
 .project-section
 {
 	margin: 0 5%;
@@ -188,7 +209,7 @@ $light-grey: #DFE0DC;
 
 .portfolio-projects
 {
-	height: 60vh;
+	height: 55vh;
 	position: relative;
 	width: 100%;
 	background-color: $darker-grey;
@@ -267,8 +288,10 @@ tables
 
 .author-box
 {
-	border: 1px solid black;
+	border: 1px solid $light-grey;
 	padding: 0;
+	margin-left: -3vh;
+	margin-right: 3vh;
 }
 
 .author-pic
@@ -284,6 +307,11 @@ tables
 .portfolio-skills
 {
 	display: none;
+}
+
+.post-body
+{
+	margin-bottom: 7vh;
 }
 
 
@@ -384,6 +412,12 @@ tables
 
 .modal-title
 {
+}
+
+.post-top-container
+{
+	margin-top: 1vh;
+	height: 20vh;
 }
 
 

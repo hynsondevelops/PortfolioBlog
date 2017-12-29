@@ -18,23 +18,32 @@
 					<h1 class="portfolio-skills" id="skill6"> Ruby on Rails </h1>
 				</div>
 			</div>
+			<div class="portrait-contact">	
+				<%= image_tag @user.img.url(:medium), class: "portfolio-portrait" %>
+				<br>
+				<a class="btn btn-primary btn-lg" id="contact-scroll-button" href="#portfolio-contact-scroll">Yes, I'm available for hire</a>
+			</div>
 		</div>
 		<div class="col-md-3">
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-5">
+		<div class="col-md-3">
 		</div>
-		<div class="col-md-2">
-			<%= image_tag @user.img.url(:medium), class: "portfolio-portrait" %>
-			<a class="btn btn-primary btn-lg" id="contact-scroll-button" href="#portfolio-contact-scroll">Yes, I'm available for hire</a>
+		<div class="col-md-6">
 		</div>
-		<div class="col-md-5">
+		<div class="col-md-3">
 		</div>
 	</div>
+	<div class="row blog-projects">
+		<a id="blog-projects-a" href="#portfolio-blog">
+			<p> Learn more about my work </p>
+			<i id="blog-project-arrow" class="fa fa-chevron-down fa-2x"></i>
+		</a>
+	</div>
 </div>
-<div class="container-fluid portfolio-blog">
-	<h3> Blog </h3>
+<div class="container-fluid portfolio-blog" id="portfolio-blog">
+	<h3 class="post-title"> Blog </h3>
 	<div class="posts-section">
 		<% @posts.each do |post| %>
 		<div class="col-md-4">

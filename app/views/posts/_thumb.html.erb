@@ -1,14 +1,26 @@
-<div class="row">
-	<h3> <%= link_to post.title, post %> </h3>
-	 <%= post.created_at.strftime("Posted on %A %B %d at %I:%M%p") %>
-</div>
-<div class="row">
-			<%= image_tag post.images[0].img.url(:large), class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 author-pic"%>
-	<div class="col-md-8">
-		<%= link_to "#{post.content[0..250]}...", post %>
+<div class="row post-title-row">
+	<div class="col-md-12">
+		<h3> <%= link_to post.title, post %> </h3>
+		 <%= post.created_at.strftime("Posted on %A %B %d at %I:%M%p") %>
 	</div>
 </div>
-<div class="row">
-	<%= render partial: "posts/associated_tags", :locals => {tags: post.tags} %>
+<div class="row post-top-container">
+	<% if post.images == [] %>
+		<div class="col-md-12">
+			<%= "#{post.content[0..250]}" %><br>
+			<%= link_to "Read more...", post %>
+		</div>
+	<% else %>
+		<%= image_tag post.images[0].img.url(:large), class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 author-pic"%>
+		<div class="col-md-8">
+			<%= "#{post.content[0..250]}" %><br>
+			<%= link_to "Read more...", post %>
+		</div>
+	<% end %>
 </div>
+<% if post.tags != [] %>
+	<div class="row post-tags">
+		<%= render partial: "posts/associated_tags", :locals => {tags: post.tags} %>
+	</div>
+<% end %>
 

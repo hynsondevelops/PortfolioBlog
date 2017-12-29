@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
 
 	def portfolio
 		@user = User.find_by(name: "Adam Hynson")
-		@posts = Post.order('created_at DESC')[0..3]
+		@posts = Post.order('created_at DESC')[0..2]
 		@chess = Project.find_by(name: "Chess")
 		@real_estate = Project.find_by(name: "Real Estate App")
 		@tutoring = Project.find_by(name: "Tutoring Business")
