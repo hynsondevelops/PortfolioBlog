@@ -10,8 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.widget
+//= require z.jquery.fileupload
 //= require turbolinks
 //= require_tree .
 //= require bootstrap.min
@@ -109,6 +112,4 @@ function submitContactInfo()
 	modal.html("Your contact request has been submitted. Thank you for contacting me. I will get back to you by the next day. ");
 	var buttons = $("#contact-create-buttons");
 	buttons.html('<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>')
-
-
 }
