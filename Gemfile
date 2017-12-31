@@ -42,6 +42,8 @@ gem 'rspec-rails', '~> 3.6'
 gem "capybara"
 #for mock models
 gem 'factory_bot_rails'
+#for image uploading via s3
+gem 'aws-sdk', '~> 2'
 
 
 
