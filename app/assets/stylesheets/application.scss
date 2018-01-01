@@ -26,6 +26,15 @@ $green-grey: #BDD2A6;
 $green : #C5E6A6;
 $light-grey: #DFE0DC;
 
+
+
+html, body
+{
+	width: 100%;
+	 margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
 .navbar
 {
 	margin: 0;
@@ -33,9 +42,14 @@ $light-grey: #DFE0DC;
 	background-color: $light-grey;
 }
 
+.navbar-brand
+{
+	height: 5vh;
+	white-space: nowrap;
+}
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-    color: $text-color;
+    color: $text-color !important;
     background-color: $green;
     border-color: $darker-grey; /*set the color you want here*/
 }
@@ -43,7 +57,7 @@ $light-grey: #DFE0DC;
 
 .btn
 {
-	color: $text-color;
+	color: $text-color !important;
     background-color: $green-grey !important;
     border-color: $darker-grey; /*set the color you want here*/
     border: 5px outset $darker-grey;;
@@ -98,7 +112,7 @@ $light-grey: #DFE0DC;
 	height:45vh;
 	position: relative;
 	width: 100%;
-	background-color: $green-grey;
+	background-color: $light-grey;
 	background-size: cover;
 }
 .contact-description
@@ -163,6 +177,7 @@ $light-grey: #DFE0DC;
 
 .portfolio-intro
 {
+	text-align: center;
 	font-size: 24px;
 }
 
@@ -203,8 +218,8 @@ $light-grey: #DFE0DC;
 	height: 95vh;
 	position: relative;
 	width: 100%;
-	background-image: url("background2.jpeg");
-	background-size: cover;
+	z-index: 1;
+	padding:0;
 }
 
 .portfolio-projects
@@ -229,6 +244,16 @@ tables
 .page-specific-content
 {
 	margin: 0px 5%;
+}
+
+#background-image
+{
+	height: 95vh;
+	width: 100%;
+	z-index: -1;
+	position: absolute;
+	filter: brightness(35%);
+	padding:0;
 }
 
 .toolbar
@@ -407,7 +432,6 @@ tables
 
 .project-title-row
 {
-	text-align: center;
 }
 
 .modal-title
@@ -418,6 +442,11 @@ tables
 {
 	margin-top: 1vh;
 	height: 20vh;
+}
+
+.grey-background a
+{
+	color: white;
 }
 
 

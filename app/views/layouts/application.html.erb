@@ -12,11 +12,11 @@
 
     <% if request.env['PATH_INFO'] != "/portfolio" %>
        <div class="page-specific-content">
-        <%= yield %>
+       <%= yield %>
       </div>
       <div id="disqus_thread"></div>
-    </body>
     <% else %>
       <%= yield %>
     <% end %>
+  </body>
 </html>

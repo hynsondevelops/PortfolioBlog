@@ -1,12 +1,9 @@
-<div class="row project-title-row">
-	<h3> <%= link_to project.name, project %> </h3>
-
-</div>
 <div class="row project-top-container">
-	<%= image_tag project.images[0].img.url(:large), class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 author-pic"%><br>
+	<%= image_tag project.images[0].img.url(:large), class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 author-pic"%>
 
 	
 	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+		<h3> <%= link_to project.name, project %> </h3>
 		<%= "#{project.description[0..250]}" %>
 		<br>
 		<%= link_to "Read more...", project %>
