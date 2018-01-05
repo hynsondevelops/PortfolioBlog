@@ -56,24 +56,28 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find_by(title: params[:title])
-		@content = helpers.markdown(@post.content)
-		tag_ids = []
-		@post.tags.each do |tag|
-			tag_ids.push(tag.id)
-		end
-		@related_posts = Set.new
-		tag_ids.size.downto(0) do |i|
-			tags = tag_ids[0...i]
-			posts = Post.includes(:tags).where(:id => tags)
-			posts.each do |post|
-				@related_posts.add(post)
+		@post = Post.find_by(title: params[:title], draft: false)
+		if (@post != nil)
+			@content = helpers.markdown(@post.content)
+			tag_ids = []
+			@post.tags.each do |tag|
+				tag_ids.push(tag.id)
 			end
+			@related_posts = Set.new
+			tag_ids.size.downto(0) do |i|
+				tags = tag_ids[0...i]
+				posts = Post.includes(:tags).where(:id => tags)
+				posts.each do |post|
+					@related_posts.add(post)
+				end
+			end
+		else
+			redirect_to action: "index"
 		end
 	end
 
 	def index
-		@posts = Post.order('created_at DESC')
+		@posts = Post.order('created_at DESC').where(draft: false)
 	end
 
 	def markdown_helper

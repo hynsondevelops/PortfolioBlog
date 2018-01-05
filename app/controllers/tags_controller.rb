@@ -10,5 +10,10 @@ class TagsController < ApplicationController
 
 	def show
 		@tag = Tag.find_by(name: params[:name])
+		if (@tag != nil)
+			@posts = @tag.posts.where(draft: false)
+		else
+			redirect_to posts_path
+		end
 	end
 end
