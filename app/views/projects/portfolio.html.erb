@@ -21,7 +21,9 @@
 				</div>
 			</div>
 			<div class="portrait-contact">	
-				<%= image_tag @user.img.url(:medium), class: "portfolio-portrait" %>
+				<% if (@user.img != nil) %>
+					<%= image_tag @user.img.url(:medium), class: "portfolio-portrait" %>
+				<% end %>
 				<br>
 				<a class="btn btn-primary btn-lg" id="contact-scroll-button" href="#portfolio-contact-scroll">Yes, I'm available for hire</a>
 			</div>
@@ -57,7 +59,7 @@
 	</div>
 </div>
 
-<div class="container-fluid portfolio-projects grey-background">
+<div class="container-fluid portfolio-projects grey-background" id="portfolio-contact-scroll">
 	<h3 class="post-title"> Projects and Work </h3>
 	<div class="project-section">
 		<div class="col-md-4">
@@ -71,7 +73,7 @@
 		</div>
 	</div>
 </div>
-<div class="container-fluid portfolio-contact" id="portfolio-contact-scroll">
+<div class="container-fluid portfolio-contact">
 	<div class="col-md-2">
 	</div>
 	<div class="col-md-8">

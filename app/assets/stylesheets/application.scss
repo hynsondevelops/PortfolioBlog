@@ -40,6 +40,12 @@ html, body
 	margin: 0;
 	height: 5vh;
 	background-color: $light-grey;
+	color: #777;
+}
+
+.navbar *
+{
+	color: #777;
 }
 
 .navbar-brand
@@ -54,6 +60,11 @@ html, body
     border-color: $darker-grey; /*set the color you want here*/
 }
 
+
+#footer-nav
+{
+	height: 20vh;
+}
 
 .btn
 {
@@ -244,6 +255,7 @@ tables
 .page-specific-content
 {
 	margin: 0px 5%;
+	min-height: 95vh;
 }
 
 #background-image

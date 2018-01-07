@@ -15,7 +15,6 @@ RSpec.feature "MarkdownEditors", type: :feature do
 	context 'Logged in new' do 
 
 		before (:all) do
-			
 	    	@user = FactoryBot.create( :user )
 		end
 
