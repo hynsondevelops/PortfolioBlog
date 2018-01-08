@@ -261,11 +261,11 @@ chess.images = [chessImage1, chessImage2]
 chess.save
 
 real_estate = Project.create!.from_json("{\"name\":\"Real Estate App\",\"description\":\"A real estate listing application similar to Zillow.com or Realtor.com. Uses Ruby on Rails with a Postgresql database and Bootstrap styling. Database includes information on al fifty United States including over X zipcodes and Y cities. Allows for listing for rent or sale with a user profile that allows email communication. \",\"personal_or_work\":true,\"github\":\"https://github.com/hynsondevelops/RealEstateApp\",\"live_link\":\"https://stormy-bayou-53826.herokuapp.com/\",\"author_id\":1}")
-real_estate_img_1 = Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'background.jpeg'), 'image/jpeg'))
+real_estate_img_1 = Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'realEstateApp.png'), 'image/png'))
 real_estate.images = [real_estate_img_1]
 real_estate.save
 
 tutoring = Project.create!.from_json("{\"name\":\"Tutoring Business\",\"description\":\"A spanish tutoring business contact page. Fully responsive design. \",\"personal_or_work\":true,\"github\":\"https://github.com/hynsondevelops/TutoringPage\",\"live_link\":\"http://hynsontutoring.services/\",\"author_id\":1}")
-tutoring_img_1 = Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'background1.jpeg'), 'image/jpeg'))
+tutoring_img_1 = Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'tutoringPage.png'), 'image/png'))
 tutoring.images = [tutoring_img_1]
 tutoring.save

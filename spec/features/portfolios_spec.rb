@@ -53,7 +53,7 @@ RSpec.feature "Portfolios", type: :feature do
 			    el.click
 			end
 
-			puts html
+		
 			page.all(:css, '#myModal').each do |el|
 			    puts el.innerHTML
 			end
@@ -64,6 +64,34 @@ RSpec.feature "Portfolios", type: :feature do
 		scenario "Anyone can submit contact" do
 
 		end
+
+	end
+
+	context "Visiting External Links" do
+		before(:each) do 
+			visit "/portfolio"
+		end
+
+		scenario "Chess github link" do
+			expect(html).to have_link('Github', href: "https://github.com/hynsondevelops/Chess")
+		end
+
+		scenario "Real Estate App github link" do
+			expect(html).to have_link('Github', href: "https://github.com/hynsondevelops/RealEstateApp")
+		end
+
+		scenario "Real Estate App live link" do
+			expect(html).to have_link('Live', href: "https://stormy-bayou-53826.herokuapp.com")
+		end
+
+		scenario "Tutoring github link" do
+			expect(html).to have_link('Github', href: "https://github.com/hynsondevelops/TutoringPage")
+		end
+
+		scenario "Tutoring live link" do
+			expect(html).to have_link('Live', href: "http://hynsontutoring.services")
+		end
+
 
 	end
 end
