@@ -1,10 +1,11 @@
 <div class="container-fluid post-index">
 	<h3>All posts sorted by most recent </h3>
+
 	<% @posts.each_with_index do |post, index| %>
 		<% if index==0 || index % 3==0%>
 			<div class="row">
 		<% end %>
-		<div class="col-md-4">
+		<div class="col-md-4 post-thumb">
 			<%= render partial: "thumb", :locals => {post: post} %>
 		</div>
 		<% if (index!=0 && index % 2 == 0) || (index==(@posts.size - 1)) %>
