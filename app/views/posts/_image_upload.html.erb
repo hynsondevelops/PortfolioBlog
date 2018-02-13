@@ -3,7 +3,7 @@
 		File Upload
 	</div>
 	<div class="panel-body">
-			<%= form_tag("/images", id: "image-form", :multipart => true) do %>
+			<%= form_tag("/images", id: "image-form", :multipart => true, html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do %>
 			<%= text_field_tag("alt_text", nil, placeholder: 'Image Alt Text') %>
 			<%= file_field_tag "img", type: :file %>
 			<%= text_area_tag("image_content", @plain_text, class: "hidden-tag", onkeyup: "updateMarkdown();") %>
