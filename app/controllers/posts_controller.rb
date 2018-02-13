@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-	before_action :set_s3_direct_post, only: [:new]
+	#before_action :set_s3_direct_post, only: [:new]
 
 	def portfolio
 	end
