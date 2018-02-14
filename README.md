@@ -1,29 +1,38 @@
-# README
+# PortfolioBlog
+A Ruby on Rails application to serve as both a portfolio for myself and a blog to write about web development. I wrote an in browser Markdown converter and editor for writing drafts of blog posts. I documented developing this Markdown editor which you can read about [here](https://hynson-tech-blog.herokuapp.com/posts/Markdown%20Editor)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Demo
+You can see a running version of the application at [https://hynson-tech-blog.herokuapp.com/](https://hynson-tech-blog.herokuapp.com/).
+[Portfolio Page](https://hynson-tech-blog.herokuapp.com/)
 
-Things you may want to cover:
+## Features
+**Markdown Editor**
 
-* Ruby version
+Allows for adding local images by uploading and inserting relevant hyperlink text for Markdown. 
 
-* System dependencies
+Allows for writing text in on one half of screen and rendering the resulting Markdown output in real time. 
 
-* Configuration
+Utilizes RedCarpet gem for converting text to Markdown. 
 
-* Database creation
+Utilizes Pygmentize gem for color syntax highlighting within code blocks. 
 
-* Database initialization
+**Posts**
 
-* How to run the test suite
+Markdown editor page allows for posting the content to the blog. 
 
-* Services (job queues, cache servers, search engines, etc.)
+Posts have tags that are searchable. 
 
-* Deployment instructions
+Each post has a Disqus comment section. 
 
-* ...
+Allows for address, zipcode, city, state, number of bedrooms, number of bathrooms, price, and text description.
 
-To do:
-Add users
-Allow admin users to create posts
-Allow post writing in browser to show plain text on one side and markdown to html on the other
+Can attach as many pictures as desired to be displayed in a carousel on the listing page. 
+
+## Built With
+
+* [Ruby On Rails](http://rubyonrails.org/) - The web framework used
+* [Bootstrap](https://getbootstrap.com/) - Front end design
+
+## Authors
+
+* **Adam Hynson** - *Developer* - [Github](https://github.com/hynsondevelops) - [Portfolio](https://hynson-tech-blog.herokuapp.com/portfolio) - [Blog](https://hynson-tech-blog.herokuapp.com/posts)
