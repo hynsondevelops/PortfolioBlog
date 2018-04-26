@@ -1,6 +1,14 @@
 include ActionDispatch::TestProcess
 
 FactoryBot.define do
+  factory :post_image do
+    post_id 1
+    image "MyString"
+  end
+  factory :project_image do
+    project_id 1
+    image "MyString"
+  end
 
 	sequence :img_file_name do |n|
 	   "file_#{n}"

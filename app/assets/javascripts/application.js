@@ -21,29 +21,6 @@
 
 function createImage()
 {
-	$(function() {
-	  $('.directUpload').find("input:file").each(function(i, elem) {
-	    var fileInput    = $(elem);
-	    var form         = $(fileInput.parents('form:first'));
-	    var submitButton = form.find('input[type="submit"]');
-	    var progressBar  = $("<div class='bar'></div>");
-	    var barContainer = $("<div class='progress'></div>").append(progressBar);
-	    fileInput.after(barContainer);
-	    fileInput.fileupload({
-	      fileInput:       fileInput,
-	      url:             form.data('url'),
-	      type:            'POST',
-	      autoUpload:       true,
-	      formData:         form.data('form-data'),
-	      paramName:        'file', // S3 does not like nested name fields i.e. name="user[avatar_url]"
-	      dataType:         'XML',  // S3 returns XML if success_action_status is set to 201
-	      replaceFileInput: false
-	    });
-	  });
-	});
-	var plain_text_box = document.getElementById("content");
-	var plain_text_box_content = plain_text_box.value;
-	var image_name = document.getElementById("img").value.split(/(\\|\/)/g).pop();
 	$('#image-form').submit();
 	updateMarkdown();
  };
@@ -59,8 +36,6 @@ function createTag()
 function updateMarkdown()
 {
 	var plain_text = document.getElementById("content").value;
-	var image_text_content = document.getElementById("image_content");
-	image_text_content.value = plain_text;
 	var markdown_box = document.getElementsByClassName("markdown-html")[0];//there is only ever one element with this classname
 	var markdown = "";
 	$.ajax({
@@ -71,7 +46,9 @@ function updateMarkdown()
 	    },
 	    dataType: "json",
 	    success: function(data){
-	        markdown_box.innerHTML = data.content
+	        markdown_box.innerHTML = "  <br>" + data.content
+	        console.log(markdown_box.innerHTML)
+
 	    }        
 	});
 };

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-	before_action :set_s3_direct_post, only: [:new]
+	#before_action :set_s3_direct_post, only: [:new]
 
 	def portfolio
 	end
@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 		if (user_signed_in?)
 			@post = Post.new
 			@plain_text = "Type your markdown plain text here."
+			@post_image = PostImage.new
 		else
 			redirect_to action: "index"
 		end

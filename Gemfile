@@ -44,9 +44,12 @@ gem "capybara"
 gem 'factory_bot_rails'
 #for image uploading via s3
 gem 'aws-sdk', '~> 2'
-
-
-
+#images
+gem 'carrierwave'
+#image resizing
+gem 'mini_magick'
+#for image storage
+gem 'fog'
 
 
 # Use jquery as the JavaScript library

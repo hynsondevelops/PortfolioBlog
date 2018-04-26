@@ -1,6 +1,8 @@
 <div class="row project-top-container">
-	<%= image_tag project.images[0].img.url(:large), class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 author-pic"%>
 
+		<% project.project_images.each do |project_img| %>
+			<%= image_tag project_img.image.resized.url, class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 author-pic" if project_img.image? %>
+		<% end %>
 	
 	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 		<h3> <%= link_to project.name, project %> </h3>

@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
 	def portfolio
 		@user = User.find_by(name: "Adam Hynson")
 		@posts = Post.order('created_at DESC')[0..2]
-		@chess = Project.find_by(name: "Chess")
+		@snacker_tracker = Project.find_by(name: "Snacker Tracker")
 		@real_estate = Project.find_by(name: "Real Estate App")
 		@tutoring = Project.find_by(name: "Tutoring Business")
 		@contact = Contact.new
@@ -37,31 +37,17 @@ class ProjectsController < ApplicationController
 	end
 
 	def create
-	   @project = Project.create(project_params)
-   	   if (@project.save)
-  			if params[:images]
-  			  #===== The magic is here ;)
-  			  params[:images].each { |image|
-  			    cur_image = Image.create(img: image, project_id: @project.id)
-  			    if (cur_image.valid?)
-	  			    @project.images.push(cur_image)
-	  			    @project.save
-	  			else
-	  				prev_img = Image.find_by(img_file_name: image.original_filename)
-	  				prev_img.project_id = @project.id
-	  				if (prev_img.save)
-	  					@project.images.push(prev_img)
-	  				end
-	  			end
-  			  }
-  			end
-  			# Handle a successful save.
-  			#@project.send_activation_email
-  			flash[:info] = "project created!"
-  			redirect_to action: "show", id: @project.id
-  		else
-  			render 'new'
-  		end
+	   @project = Project.new(project_params)
+   	   respond_to do |format|
+   	        if @project.save
+   	          params[:project_images]['image'].each do |a|
+   	             @project_attachment = @project.project_images.create!(:image => a)
+   	          end
+   	          format.html { redirect_to @project, notice: 'Post was successfully created.' }
+   	        else
+   	          format.html { render action: 'new' }
+   	        end
+   	      end
 	end
 
 	def update
@@ -81,7 +67,7 @@ class ProjectsController < ApplicationController
 	private
 
 	def project_params
-	  params[:project].permit(:name, :description, :github, :live_link, :personal_or_work, :author_id)
+	  params[:project].permit(:name, :description, :github, :live_link, :personal_or_work, :author_id, :image)
 	end
 
 end
