@@ -28,6 +28,8 @@ gem 'bootstrap-sass', '3.3.6'
 gem 'rails_bootstrap_navbar'
 #for markdown to html
 gem 'redcarpet', '~> 3.0.0'
+#for images
+gem "paperclip", "~> 5.0.0"
 #syntax highlighting
 gem 'pygmentize'
 #for users 
@@ -48,11 +50,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 #for image storage
 gem 'fog'
-
-gem 'loofah', '~> 2.2.1'
-gem 'nokogiri', '~> 1.8.2'
-gem 'rails-html-sanitizer', '~> 1.0.4'
-
 
 
 
