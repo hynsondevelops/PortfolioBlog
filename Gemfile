@@ -50,8 +50,12 @@ gem 'carrierwave'
 gem 'mini_magick'
 #for image storage
 gem 'fog'
-
-
+#for secret credentials
+gem 'figaro'
+#package manager
+gem 'webpacker', '~> 3.5'
+#react.js
+gem 'react_on_rails', '11.0.0'
 
 
 # Use jquery as the JavaScript library

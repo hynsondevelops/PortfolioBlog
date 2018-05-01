@@ -1,1 +1,23 @@
-<%= render partial: "thumb", :locals => {project: @project} %>
+<div class="row">
+	<div class="col-md-3">
+	</div>
+	<div class="col-md-6">
+		<div class="row project-top-container">
+					<%= image_tag "/app/assets/images/ChessStart.png", class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 author-pic" %>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				<h3> <%= link_to @project.name, @project %> </h3>
+				<%= "#{@project.description[0..250]}" %>
+				<br>
+				<%= link_to "Read more...", @project %>
+			</div>
+		</div>
+		<div class="row project-links">
+			<div>
+				<%= link_to "Live", @project.live_link, class: "btn btn-primary" %>
+				<%= link_to "Github", @project.github, class: "btn btn-primary" %><br>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+	</div>
+</div>
