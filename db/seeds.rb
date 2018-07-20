@@ -260,7 +260,7 @@ chessImage2 = Image.create(img: fixture_file_upload(Rails.root.join('app', 'asse
 chess.images = [chessImage1, chessImage2]
 chess.save
 
-real_estate = Project.create!.from_json("{\"name\":\"Real Estate App\",\"description\":\"A real estate listing application similar to Zillow.com or Realtor.com. Uses Ruby on Rails with a Postgresql database and Bootstrap styling. Database includes information on al fifty United States including over X zipcodes and Y cities. Allows for listing for rent or sale with a user profile that allows email communication. \",\"personal_or_work\":true,\"github\":\"https://github.com/hynsondevelops/RealEstateApp\",\"live_link\":\"https://stormy-bayou-53826.herokuapp.com/\",\"author_id\":1}")
+real_estate = Project.create!.from_json("{\"name\":\"Real Estate App\",\"description\":\"A real estate listing application similar to Zillow.com or Realtor.com. Uses Ruby on Rails with a Postgresql database and Bootstrap styling. Database includes information on al fifty United States including over X zipcodes and Y cities. Allows for listing for rent or sale with a user profile that allows email communication. \",\"personal_or_work\":true,\"github\":\"https://github.com/hynsondevelops/RealEstateApp\",\"live_link\":\"https://real-estate-finder.herokuapp.com/\",\"author_id\":1}")
 real_estate_img_1 = Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'realEstateApp.png'), 'image/png'))
 real_estate.images = [real_estate_img_1]
 real_estate.save
@@ -269,3 +269,27 @@ tutoring = Project.create!.from_json("{\"name\":\"Tutoring Business\",\"descript
 tutoring_img_1 = Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'tutoringPage.png'), 'image/png'))
 tutoring.images = [tutoring_img_1]
 tutoring.save
+
+snacker_tracker = Project.create!.from_json("{\"name\":\"Snacker Tracker\",\"description\":\"A nutrition tracking web application similiar to Cronometer. Utilizes USDA nutritional database for macro and micro nutrients.\",\"personal_or_work\":true,\"github\":\"https://github.com/hynsondevelops/NutritionAppSeperated\",\"live_link\":\"http://nutrition-snacker-tracker.herokuapp.com/\",\"author_id\":1}")
+snacker_tracker_img_1 = Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'SnackerTrackerSearch.png'), 'image/png'))
+snacker_tracker_img_2 = Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'SnackerTrackerMicro.png'), 'image/png'))
+snacker_tracker_img_3 = Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'SnackerTrackerLogin.png'), 'image/png'))
+
+snacker_tracker.images = [snacker_tracker_img_1, snacker_tracker_img_2, snacker_tracker_img_3]
+snacker_tracker.save
+
+feedback = Project.create!.from_json("{\"name\":\"Feedback Friend\",\"description\":\"Feedback Forms is an open source web application for VIPKID ESL contracted teachers to automate their personalized customer feedback. The application allows for customizing reviews for both students and teacher applicants. The backend is built with Ruby on Rails 5 API only mode. The frontend is built with ReactJS and a Redux store.\",\"personal_or_work\":true,\"github\":\"https://github.com/hynsondevelops/NutritionAppSeperated\",\"live_link\":\"https://feedback-friend.herokuapp.com\",\"author_id\":1}")
+feedback_images = []
+feedback_images.push(Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'StudentGenerator.png'), 'image/png')))
+feedback_images.push(Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'MCMGenerator.png'), 'image/png')))
+feedback_images.push(Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'MCMTopicEdit.png'), 'image/png')))
+feedback_images.push(Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'MCMTopicIndex.png'), 'image/png')))
+feedback_images.push(Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'StudentLevelEdit.png'), 'image/png')))
+feedback_images.push(Image.create(img: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'StudentLevelIndex.png'), 'image/png')))
+feedback.images = feedback_images
+feedback.save
+
+
+
+
+

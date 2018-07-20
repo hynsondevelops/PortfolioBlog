@@ -451,7 +451,6 @@ tables
 
 .project-top-container
 {
-	height: 20vh;
 }
 
 .project-title-row
@@ -572,3 +571,17 @@ tables
 .vg { color: #19177C } /* Name.Variable.Global */
 .vi { color: #19177C } /* Name.Variable.Instance */
 .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+
+
+
+.project_img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+
+.project_side_img {
+	margin-top: 2%;
+}

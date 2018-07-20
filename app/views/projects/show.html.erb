@@ -1,15 +1,18 @@
+<br>
+<br>
+
 <div class="row">
-	<div class="col-md-3">
+	<div class="col-md-5">
+		<% @project.images.each_with_index do |image, index| %>
+			<%= image_tag image.img.original_filename, :class => 'project_img project_side_img' if (index % 2 == 0) %>
+		<% end %>
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-2">
 		<div class="row project-top-container">
-					<%= image_tag "/app/assets/images/ChessStart.png", class: "col-xs-4 col-sm-4 col-md-4 col-lg-4 author-pic" %>
-			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+			
 				<h3> <%= link_to @project.name, @project %> </h3>
-				<%= "#{@project.description[0..250]}" %>
+				<%= @project.description %>
 				<br>
-				<%= link_to "Read more...", @project %>
-			</div>
 		</div>
 		<div class="row project-links">
 			<div>
@@ -18,6 +21,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-3">
+	<div class="col-md-5">
+		<% @project.images.each_with_index do |image, index| %>
+			<%= image_tag image.img.original_filename, :class => 'project_img' if (index % 2 == 1) %>
+		<% end %>
 	</div>
 </div>

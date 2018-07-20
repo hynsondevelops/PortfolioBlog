@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
 		@snacker_tracker = Project.find_by(name: "Snacker Tracker")
 		@real_estate = Project.find_by(name: "Real Estate App")
 		@tutoring = Project.find_by(name: "Tutoring Business")
+		@feedback = Project.find_by(name: "Feedback Friend")
 		@contact = Contact.new
 	end
 
