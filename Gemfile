@@ -53,6 +53,7 @@ gem 'fog'
 #for secret credentials
 gem 'figaro'
 
+gem 'sprockets', '~> 3.7.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
