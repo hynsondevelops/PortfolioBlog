@@ -191,6 +191,7 @@ html, body
 {
 	text-align: center;
 	font-size: 24px;
+	line-height: 24px;
 }
 
 .portfolio-description
@@ -584,4 +585,16 @@ tables
 
 .project_side_img {
 	margin-top: 2%;
+}
+
+a:hover {
+	background-color: inherit;
+}
+
+li {
+	font-size: 24px;
+}
+
+#paubox:hover {
+	background-color: blue;
 }

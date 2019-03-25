@@ -7,7 +7,7 @@
 		</div>
 
 		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-			<p class="portfolio-intro"> Hello! My name is Adam Hynson and I am a freelance web developer based in Baltimore, Maryland. I specialize in Ruby on Rails and ReactJS development. I consider myself a full stack developer with strong backend skills. </p>
+			<p class="portfolio-intro"> Hello! My name is Adam Hynson and I am a freelance web developer based in Baltimore, Maryland. I specialize in Ruby on Rails and ReactJS development. I am a full stack developer with strong backend skills. </p>
 			<div class="portfolio-description">
 				<h2>I have skills in... </h2>
 				<div class="typewriter">
@@ -18,6 +18,8 @@
 					<h1 class="portfolio-skills" id="skill4"> PostgreSQL </h1>
 					<h1 class="portfolio-skills" id="skill5"> BASH </h1>
 					<h1 class="portfolio-skills" id="skill6"> Ruby on Rails </h1>
+					<h1 class="portfolio-skills" id="skill7"> React </h1>
+					<h1 class="portfolio-skills" id="skill8"> Redux </h1>
 				</div>
 			</div>
 			<div class="portrait-contact">	
@@ -47,13 +49,20 @@
 	</div>
 </div>
 <div class="container-fluid portfolio-blog" id="portfolio-blog">
-	<h3 class="post-title"> Blog </h3>
-	<div class="posts-section">
-		<% @posts.each do |post| %>
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-			<%= render partial: "posts/thumb", :locals => {post: post, user: @user} %>
+	<div class="col-md-6">
+		<h3 class="post-title"> Blog </h3>
+		<div class="posts-section">
+			<% @posts.each do |post| %>
+			<div class="col-md-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:center">
+				<%= render partial: "posts/thumb", :locals => {post: post, user: @user} %>
+			</div>
+			<% end %>
 		</div>
-		<% end %>
+	</div>
+	<div class="col-md-6" style="text-align:center">
+		<h3 class="post-title"> Companies </h3>
+		<h3><a href="https://www.paubox.com/"><%= image_tag "paubox.png", style: "max-width: 150px" %></a></h3>
+			<%= image_tag "PauboxFeedback.png", style: "border-radius: 25px; max-width:400px", id: "paubox" %>
 	</div>
 
 	</div>
